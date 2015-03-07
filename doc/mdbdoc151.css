@@ -1,0 +1,106 @@
+
+ul
+{
+	padding-bottom:10px;
+}
+
+ul li
+{
+	list-style-type: square;
+}
+
+
+/* h1 = top header */
+h1
+	{	margin-top: 10px;
+		font-family: "Century Gothic", Arial, serif;
+		font-size: 26px;
+	}
+
+/* h2 = section headers eg tables, queries etc */
+h2
+	{	margin-top: 10px;
+		font-family: "Century Gothic", Arial, serif;
+		font-size: 20px;
+	}
+
+/* h3 = sub headers - one per sub item - eg table, module etc. */
+h3	{
+		font-family: "Century Gothic", Arial, serif;
+		font-size: 16px;
+	}
+
+/* mdbtable = tables for data display */
+.mdbtable
+	{
+		margin:0px;
+		padding:0px;
+		width:100%;
+		border: 1px solid #000000;
+		border-collapse: collapse;
+	}
+
+.mdbtable table
+	{
+		margin-bottom: 10px;
+	}
+	
+.mdbtable th
+	{ 	
+		text-align: left; 
+		vertical-align: top;	
+		background-color:#ABABAB;
+/*		border-bottom: 1px solid #000000;
+		border-left: 1px solid #000000;
+		border-right: 1px solid #000000;
+		border-top: 1px solid #000000;*/
+	}
+
+.mdbtable tr:nth-child(odd) 
+	{ 	
+		background: #FFFF00;	
+	}
+	
+.mdbtable tr:nth-child(even) 
+	{ 	
+		background: #FFFFFF;	
+	}
+ 
+.mdbtable td
+	{
+		text-align: left; 
+		/* border-left: 1px solid #000000;
+		border-right: 1px solid #000000;
+		border-bottom: 1px solid #000000;*/
+	}
+
+/* right aligned numbers within table cells */
+.mdbtable  .rightNum 
+	{ 	text-align: right; 
+	
+	}
+
+/* Basic stylesheet alignment */	
+.mdbtable caption 
+	{ 
+		text-align: left; 
+		font-weight: bold; 
+	}
+	
+nav
+	{
+		border-bottom: 1px solid #000000;
+	}	
+
+/* Links back to main contents */ 
+.contentslist
+	{
+		border-top: 10px;
+		font-size: 10px;
+	}
+	
+/* DB Information at bottom of report */
+footer
+	{
+		border-top: 1px solid black;
+	}
