@@ -1,0 +1,25 @@
+Public Sub CreateTheDb()
+
+Dim strSQL As String
+On Error GoTo ErrorTrap
+
+'Local Table
+
+strSQL="CREATE TABLE [USysMdbdocPreferences] ([PreferenceName] Text (20),[PreferenceValue] Text (50),[CanOverride] YesNo,[Notes] Text (255),[Mandatory] YesNo )"
+Currentdb.Execute strSQL
+
+strSQL="CREATE UNIQUE INDEX [PrimaryKey] ON [USysMdbdocPreferences] ([Mandatory])  WITH PRIMARY DISALLOW NULL "
+Currentdb.Execute strSQL
+
+'Local Table
+
+strSQL="CREATE TABLE [USysRegInfo] ([Subkey] Text (255),[Type] Long,[ValName] Text (255),[Value] Text (255) )"
+Currentdb.Execute strSQL
+
+'Access 2010 - Compact And Repair
+SendKeys "%F{END}{ENTER}%F{TAB}{TAB}{ENTER}", False
+Exit Sub
+ErrorTrap:
+MsgBox "Erl=" & vbCrLf & "Err.Number=" & Err.Number & vbCrLf & "Err.Description=" & Err.Description
+
+End Sub

@@ -1,0 +1,18 @@
+USysMdbdocPreferences
+              PreferenceName               109          TextBox
+              PreferenceValue              109          TextBox
+              CanOverride    106          CheckBox
+              Notes          109          TextBox
+              Mandatory      106          CheckBox
+USysRegInfo
+              Subkey         109          TextBox
+              Type           109          TextBox
+              ValName        109          TextBox
+              Value          109          TextBox
+Count of Check box = 2
+Count of Text box  = 7
+Count of List box  = 0
+Count of Combo box = 0
+Count of Else      = 0
+Count of Display Controls = 9
+Count of All Fields = 9

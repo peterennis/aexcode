@@ -1,0 +1,23 @@
+----------------------------
+TABLE: USysMdbdocPreferences
+----------------------------
+FIELD NAME         FIELD TYPE      SIZE    DESCRIPTION                                                            
+===============    ============    ====    =======================================================================
+PreferenceName     Text            20      Name of preference                                                     
+PreferenceValue    Text            50      Current value of preference                                            
+CanOverride        Yes/No          1       Can it be overridden at the database specific level (to be implemented)
+Notes              Text            255     Comments to be displayed on the preferences form.                      
+Mandatory          Yes/No          1       Is value in this field mandatory (eg yes/no values)                    
+
+
+------------------
+TABLE: USysRegInfo
+------------------
+FIELD NAME         FIELD TYPE      SIZE    DESCRIPTION                                
+===============    ============    ====    ===========================================
+Subkey             Text            255     Registry key to store the addin information
+Type               Long Integer    4                                                  
+ValName            Text            255                                                
+Value              Text            255                                                
+
+

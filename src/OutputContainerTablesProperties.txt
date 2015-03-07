@@ -1,0 +1,32 @@
+>>>USysMdbdocPreferences
+              Name          USysMdbdocPreferences
+              Owner         admin
+              UserName      admin
+              Permissions    1048319 
+              AllPermissions               1048319 
+              Container     Tables
+              DateCreated   12/9/2003 9:08:57 PM 
+              LastUpdated   3/6/2015 7:57:04 PM 
+              Orientation    0 
+              OrderByOn     False
+              DefaultView    2 
+              Description   This table holds the MDB Doc preferences, set on the preferences form.
+              GUID          B4-B2-0E-7F-F0-AB-4B-BD
+              DisplayViewsOnSharePointSite               1 
+              TotalsRow     False
+              FilterOnLoad  False
+              OrderByOnLoad True
+              HideNewField  False
+>>>USysRegInfo
+              Name          USysRegInfo
+              Owner         admin
+              UserName      admin
+              Permissions    1048319 
+              AllPermissions               1048319 
+              Container     Tables
+              DateCreated   7/8/2001 9:24:00 PM 
+              LastUpdated   12/12/2003 3:58:54 PM 
+              OrderByOn     False
+              Description   MS Access Addin registration information, present in all addins.
+              Orientation    0 
+              DefaultView    2 

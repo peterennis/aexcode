@@ -1,0 +1,32 @@
+>>>AccessLayout
+              Name          AccessLayout
+              Owner         admin
+              UserName      admin
+              Permissions    1048575 
+              AllPermissions               1048575 
+              Container     Databases
+              DateCreated   6/30/2001 8:12:24 PM 
+              LastUpdated   3/5/2008 8:58:15 PM 
+              KeepLocal     T
+>>>SummaryInfo
+              Name          SummaryInfo
+              Owner         admin
+              UserName      admin
+              Permissions    1048575 
+              AllPermissions               1048575 
+              Container     Databases
+              DateCreated   6/30/2001 6:43:24 PM 
+              LastUpdated   10/13/2007 3:42:26 PM 
+              Title         MDB Doc
+              Author        John Barnett
+              Comments      Addin to produce summary information on all database objects and output it to XHTML.
+              Company       John Barnett
+>>>UserDefined
+              Name          UserDefined
+              Owner         admin
+              UserName      admin
+              Permissions    1048575 
+              AllPermissions               1048575 
+              Container     Databases
+              DateCreated   6/30/2001 6:43:24 PM 
+              LastUpdated   6/30/2001 6:43:24 PM 
