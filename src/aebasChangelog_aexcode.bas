@@ -4,8 +4,8 @@ Option Explicit
 ' Constants for settings of "aexcode"
 Public Const gstrPROJECT_AEXCODE As String = "aexcode"
 
-Private Const gstrVERSION_AEXCODE As String = "2.0.0"
-Private Const gstrDATE_AEXCODE As String = "March 6, 2015"
+Private Const gstrVERSION_AEXCODE As String = "2.0.1"
+Private Const gstrDATE_AEXCODE As String = "March 9, 2015"
 
 Public Const THE_SOURCE_FOLDER = "C:\ae\aexcode\src\"
 Public Const THE_XML_FOLDER = "C:\ae\aexcode\src\xml\"
