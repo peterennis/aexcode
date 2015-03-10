@@ -1,0 +1,358 @@
+ÿþVersion =20
+VersionRequired =20
+Begin Form
+    PopUp = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    CloseButton = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =0
+    PictureAlignment =2
+    PictureSizeMode =3
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =12240
+    DatasheetFontHeight =11
+    ItemSuffix =15
+    Left =4155
+    Top =2505
+    Right =24495
+    Bottom =15015
+    DatasheetGridlinesColor =15062992
+    RecSrcDt = Begin
+        0xbe9480ab9887e440
+    End
+    GUID = Begin
+        0x4de3ff38e9fbcb418d0bd56893278480
+    End
+    DatasheetFontName ="Calibri"
+    PrtMip = Begin
+    End
+    PrtDevMode = Begin
+    End
+    PrtDevNames = Begin
+    End
+    OnTimer ="[Event Procedure]"
+    OnLoad ="[Event Procedure]"
+    AllowDatasheetView =0
+    FilterOnLoad =0
+    DatasheetBackColor12 =-2147483643
+    ShowPageMargins =0
+    DisplayOnSharePointSite =1
+    AllowLayoutView =0
+    DatasheetAlternateBackColor =16053492
+    PictureSizeMode =3
+    DatasheetGridlinesColor12 =15062992
+    FitToScreen =1
+    PrtDevModeW = Begin
+    End
+    PrtDevNamesW = Begin
+    End
+    NoSaveCTIWhenDisabled =1
+    Begin
+        Begin Label
+            BackStyle =0
+            FontSize =11
+            FontName ="Calibri"
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =0
+            BorderTint =50.0
+            ForeThemeColorIndex =0
+            ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            BorderLineStyle =0
+            SizeMode =3
+            PictureAlignment =2
+            BorderColor =16777215
+            BorderThemeColorIndex =3
+            BorderShade =90.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin CommandButton
+            FontSize =11
+            FontWeight =400
+            FontName ="Calibri"
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            BackColor =-2147483633
+            BorderLineStyle =0
+            BorderThemeColorIndex =3
+            BorderShade =90.0
+            ThemeFontIndex =1
+        End
+        Begin TextBox
+            AddColon = NotDefault
+            FELineBreak = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AsianLineBreak =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ThemeFontIndex =1
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Section
+            Height =5760
+            Name ="Detail"
+            GUID = Begin
+                0x065f80f6b4d24749b66c9c3be9b62845
+            End
+            AlternateBackColor =15921906
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+            Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =223
+                    IMESentenceMode =3
+                    Left =8880
+                    Top =4920
+                    Width =2520
+                    Height =315
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Text7"
+                    ControlSource ="=getMyDate()"
+                    GUID = Begin
+                        0x2310cf481ed5364f9320c110f15d0c4a
+                    End
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8880
+                    LayoutCachedTop =4920
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =5235
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =8040
+                            Top =4920
+                            Width =855
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label8"
+                            Caption ="Date:"
+                            GUID = Begin
+                                0x609df97754c32e4c86a5e7e120602906
+                            End
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8040
+                            LayoutCachedTop =4920
+                            LayoutCachedWidth =8895
+                            LayoutCachedHeight =5235
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =255
+                    IMESentenceMode =3
+                    Left =8880
+                    Top =5220
+                    Width =2520
+                    Height =315
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Text9"
+                    ControlSource ="=getMyProject()"
+                    GUID = Begin
+                        0x496f522c0eae734db97f5632bd243a2f
+                    End
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8880
+                    LayoutCachedTop =5220
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =5535
+                    Begin
+                        Begin Label
+                            OverlapFlags =255
+                            Left =8040
+                            Top =5220
+                            Width =855
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label10"
+                            Caption ="Project:"
+                            GUID = Begin
+                                0x8af5f84253834d428b0473cfee17438c
+                            End
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8040
+                            LayoutCachedTop =5220
+                            LayoutCachedWidth =8895
+                            LayoutCachedHeight =5535
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =255
+                    IMESentenceMode =3
+                    Left =8880
+                    Top =4620
+                    Width =2520
+                    Height =315
+                    TabIndex =2
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Text13"
+                    ControlSource ="=getMyVersion()"
+                    GUID = Begin
+                        0xa6ced63a05c64544b026b2fc92f10cb3
+                    End
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8880
+                    LayoutCachedTop =4620
+                    LayoutCachedWidth =11400
+                    LayoutCachedHeight =4935
+                    Begin
+                        Begin Label
+                            OverlapFlags =255
+                            Left =8040
+                            Top =4620
+                            Width =855
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label14"
+                            Caption ="Version:"
+                            GUID = Begin
+                                0x8e2bf8b518a2dd4a9983dafb9a927eb1
+                            End
+                            GridlineColor =10921638
+                            LayoutCachedLeft =8040
+                            LayoutCachedTop =4620
+                            LayoutCachedWidth =8895
+                            LayoutCachedHeight =4935
+                        End
+                    End
+                End
+                Begin Image
+                    OldBorderStyle =1
+                    PictureType =2
+                    Left =60
+                    Top =120
+                    Width =12120
+                    Height =4440
+                    Name ="imgSplash"
+                    OnClick ="[Event Procedure]"
+                    Picture ="1_aexcode_logo_256x768"
+                    GUID = Begin
+                        0xe58de5c3b5d9164e9fd089f3a0f68628
+                    End
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =12180
+                    LayoutCachedHeight =4560
+                    TabIndex =3
+                    BorderThemeColorIndex =1
+                    BorderShade =100.0
+                End
+                Begin Rectangle
+                    OverlapFlags =247
+                    Width =12240
+                    Height =5760
+                    BorderColor =10921638
+                    Name ="Box14"
+                    GUID = Begin
+                        0x51326b99361b514ab98404146ff8cfc1
+                    End
+                    GridlineColor =10921638
+                    LayoutCachedWidth =12240
+                    LayoutCachedHeight =5760
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private gintC As Integer
+Private i As Long
+
+Private Sub Form_Load()
+    Me.TimerInterval = 10
+    'MyFadeForm Me, Fadezero, 1, 15
+End Sub
+
+Private Sub Form_Timer()
+    On Error GoTo The_Exit
+    'If IsEmpty(gintC) Then
+    '    MyFadeForm Me, Fadein, 1, 15
+    'End If
+    gintC = 1
+    Me.TimerInterval = 0
+The_Exit:
+    For i = 1 To 20000
+        Debug.Print i
+        DoEvents
+    Next
+    DoCmd.Close
+End Sub
+
+Private Sub imgSplash_Click()
+    i = 20000
+    DoCmd.Close
+End Sub

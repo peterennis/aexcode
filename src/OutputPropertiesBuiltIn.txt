@@ -260,6 +260,6 @@ Inherited: False;
 ---
 Name: StartUpForm
 Type: dbText
-Value: frm_aexcodeStartup
+Value: frmSplash
 Inherited: False;
 ---
