@@ -3,7 +3,6 @@ Option Explicit
 
 Private Declare Function GetOpenFilename Lib "comdlg32.dll" Alias "GetOpenFileNameA" (pOpenfilename As OPENFILENAME) As Long
 Private Declare Function GetSaveFilename Lib "comdlg32.dll" Alias "GetSaveFileNameA" (pOpenfilename As OPENFILENAME) As Long
-
 Private Declare Function SHFileOperation Lib "shell32.dll" Alias "SHFileOperationA" (lpFileOp As SHFILEOPSTRUCT) As Long
 
 Private Type OPENFILENAME
@@ -40,9 +39,8 @@ Private Type SHFILEOPSTRUCT
     lpszProgressTitle As String
 End Type
 
-
 Public Function PrepareOpenfile() As String
-    'MDBDOC: Function to prepare the common dialog in Open file mode.
+    'aexcode: Function to prepare the common dialog in Open file mode.
     Dim OpenFile As OPENFILENAME
     
     OpenFile.lStructSize = Len(OpenFile)
@@ -62,10 +60,11 @@ Public Function PrepareOpenfile() As String
     Else
         PrepareOpenfile = ""
     End If
+
 End Function
 
 Sub RecycleFile(sFile As String)
-    'MDBDOC: Code to delete a file to the Recycle bin from Chip Pearson's Excel site.
+    'aexcode: Code to delete a file to the Recycle bin from Chip Pearson's Excel site.
     ' this code and the other functions necessary to delete a file to the recycle bin
     ' came from Chip Pearson's site at http://www.cpearson.com/excel/Recycle.htm
     Dim FileOperation As SHFILEOPSTRUCT
@@ -93,7 +92,7 @@ Sub RecycleFile(sFile As String)
 End Sub
 
 Public Function PrepareSavefile() As String
-    'MDBDOC: Function to prepare the common dialog in Save file mode. Used by the button on the startup form.
+    'aexcode: Function to prepare the common dialog in Save file mode. Used by the button on the startup form.
     Dim OpenFile As OPENFILENAME
     
     OpenFile.lStructSize = Len(OpenFile)
@@ -114,4 +113,5 @@ Public Function PrepareSavefile() As String
     Else
         PrepareSavefile = ""
     End If
+
 End Function

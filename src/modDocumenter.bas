@@ -1,6 +1,27 @@
 Option Compare Database
 Option Explicit
 
+' GLOBAL CONSTANTS
+' Application name - for status bar messages, message boxes etc.
+' Use this if you want to change the name of the application. Note that the only place this won't change it
+' is in the preferences text and source code comments.
+Public Const APP_NAME As String = "aexcode"
+
+Public Const ACCESS_2007_VERSION As Integer = 12
+
+' Global constants for on/off Preferences; used for decision making throughout the software.
+
+' If you want to use Y/N instead, change these constants and use SQL update statements to modify the
+' values in the table.
+Public Const PREFERENCE_DISABLED As String * 1 = "0" ' Constant meaning on/off preference is disabled. Only used for error checking, but important nonetheless
+Public Const PREFERENCE_ENABLED As String * 1 = "1"  ' Constant meaning on/off preference is enabled
+
+' Constants that relate to the stylesheets
+Public Const STYLESHEET_ERROR As Integer = 0        ' 0 - Error detected (not able to load a file with text inclusion; invalid file etc)
+Public Const STYLESHEET_PATH As Integer = 1         ' 1 - Included using path method
+Public Const STYLESHEET_INCLUDE As Integer = 2      ' 2 - Included text in output file
+'================================================
+
 Private Const QUOTE_MARK As Integer = 34    ' ASCII code for double quote mark - to help understand code
 Private Const OBJECT_CLOSED As Integer = 0  ' (Unofficial) SysCmd constant for object being closed (not in the standard enum results)
 
@@ -8,7 +29,7 @@ Private Const OBJECT_CLOSED As Integer = 0  ' (Unofficial) SysCmd constant for o
 Private Const RETURN_TO_CONTENTS As String = "<p><a class=""contentslist"" href=""#mdbContentsList"">Click here to return to the contents list</a></p>"
 
 Public Function mdbdProcessDatabase(strFileName As String) As Boolean
-    'MDBDOC: Function that does the bulk of the processing.
+    'aexcode: Function that does the bulk of the processing.
     ' Function: ProcessDatabase
     ' Scope:    Global
     ' Parameters: strFilename (string) - the path/filename to output the HTML to.
@@ -860,7 +881,7 @@ Public Function mdbdProcessDatabase(strFileName As String) As Boolean
 End Function
 
 Private Function mdbdGetPropertyType(prp As DAO.Property) As String
-    'MDBDOC: Returns descriptive property type given supplied property.
+    'aexcode: Returns descriptive property type given supplied property.
     ' Function: GetPropertyType
     ' Scope:    Private
     ' Parameters: prp (property) - the property to examine
@@ -909,7 +930,7 @@ Private Function mdbdGetPropertyType(prp As DAO.Property) As String
 End Function
 
 Private Function mdbdGetFieldType(fld As DAO.Field, intSize As Integer) As String
-    'MDBDOC: Returns descriptive field type from supplied field.
+    'aexcode: Returns descriptive field type from supplied field.
     ' Function: mdbdGetFieldType
     ' Scope:    Private
     ' Parameters: fld (Field) - the field to examine
@@ -977,7 +998,7 @@ Private Function mdbdGetFieldType(fld As DAO.Field, intSize As Integer) As Strin
 End Function
 
 Private Function mdbdGetQueryType(qry As DAO.QueryDef) As String
-    'MDBDOC: Returns descriptive query type.
+    'aexcode: Returns descriptive query type.
     ' Function: mdbdGetQueryType
     ' Scope:    Private
     ' Parameters: qry (Query) - the query to examine
@@ -1023,7 +1044,7 @@ Private Function mdbdGetQueryType(qry As DAO.QueryDef) As String
 End Function
 
 Private Function mdbdGetTableType(tdf As DAO.TableDef) As String
-    'MDBDOC: Returns descriptive table type.
+    'aexcode: Returns descriptive table type.
     ' Function: mdbdGetTableType
     ' Scope:    Private
     ' Parameters: tbl (Table) - the table to examine
@@ -1064,7 +1085,7 @@ Private Function mdbdGetTableType(tdf As DAO.TableDef) As String
 End Function
 
 Private Function mdbdGetRelType(rel As DAO.Relation) As String
-    'MDBDOC: Returns descriptive relationship type.
+    'aexcode: Returns descriptive relationship type.
     ' Function: mdbdGetRelType
     ' Scope:    Private
     ' Parameters: rel (Relation) - the relationship to examine
@@ -1096,7 +1117,7 @@ Private Function mdbdGetRelType(rel As DAO.Relation) As String
 End Function
 
 Private Function mdbdIsPK(tdf As DAO.TableDef, fld As DAO.Field) As Boolean
-    'MDBDOC: Returns True/False depending whether a specific field is part of a specific tables primary key.
+    'aexcode: Returns True/False depending whether a specific field is part of a specific tables primary key.
     ' Function: mdbdIsPK
     ' Scope:    Private
     ' Parameters: tdf - Tabledef; fld Field
@@ -1122,7 +1143,7 @@ Private Function mdbdIsPK(tdf As DAO.TableDef, fld As DAO.Field) As Boolean
 End Function
 
 Private Function mdbdGetDescription(obj As Object) As String
-    'MDBDOC: Returns the Description property of an object.
+    'aexcode: Returns the Description property of an object.
     ' Function: mdbdGetDescription
     ' Scope:    Private
     ' Parameters: obj - any object
@@ -1138,7 +1159,7 @@ Private Function mdbdGetDescription(obj As Object) As String
 End Function
 
 Public Function StartMDBDoc() As Boolean
-    'MDBDOC: Function called from Addins menu to start MDB Doc running.
+    'aexcode: Function called from Addins menu to start MDB Doc running.
     ' Function: StartMDBDoc
     ' Scope:    Public
     ' Parameters: None
@@ -1148,12 +1169,12 @@ Public Function StartMDBDoc() As Boolean
     ' Description: This is called from the Addins menu as registered in the USysRegInfo table. All it does is open the Startup form.
     ' Called by: Addins menu.
     
-    DoCmd.OpenForm "frmMdbdocStartup", acNormal, windowmode:=acDialog
+    DoCmd.OpenForm "frm_aexcodeStartup", acNormal, windowmode:=acDialog
     StartMDBDoc = True
 End Function
 
 Private Function mdbdListCodeBlocks(mdl As Module, outfile As mdbdclsFileHandle) As String
-    'MDBDOC: Provides a list of code blocks within a module and writes them to an output file.
+    'aexcode: Provides a list of code blocks within a module and writes them to an output file.
     ' Function: mdbdListCodeBlocks
     ' Scope:    Private
     ' Parameters: mdl - Module to process; outfile - mdbdclsfilehandle to process data with.
@@ -1241,7 +1262,7 @@ Private Function mdbdListCodeBlocks(mdl As Module, outfile As mdbdclsFileHandle)
         ' use CommentTag preference to change name if needed
     
         If UCase$(Left$(strCurrentLine, intCTagLength)) = strCommentTag Then
-            ' comments start 'MDBDOC: by default but could be different (introduced 1.4)
+            ' comments start 'aexcode: by default but could be different (introduced 1.4)
             strDescription = Trim(Mid$(strCurrentLine, intCTagLength + 1))
         End If
     
@@ -1298,7 +1319,7 @@ Private Function mdbdListCodeBlocks(mdl As Module, outfile As mdbdclsFileHandle)
 End Function
 
 Private Sub mdbdCloseObjects()
-    'MDBDOC: This sub closes any open objects prior to running
+    'aexcode: This sub closes any open objects prior to running
     ' Sub: mdbdCloseObjects
     ' Scope:    Private
     ' Parameters: None
@@ -1327,7 +1348,7 @@ Private Sub mdbdCloseObjects()
 End Sub
 
 Public Function mdbdReplace2(Expression As String, Find As String, Replace As String, Optional Start As Long = 1) As String
-    'MDBDOC: Replace2 function taken from Tek-Tips database used for search/replace of special characters with their escape sequences.
+    'aexcode: Replace2 function taken from Tek-Tips database used for search/replace of special characters with their escape sequences.
     ' Author: John Barnett, handle jrbarnett
     ' In response to: http://www.tek-tips.com/viewthread.cfm?SQID=565966&SPID=700&page=1
     ' Date: 4th June 2003
@@ -1366,7 +1387,7 @@ Public Function mdbdReplace2(Expression As String, Find As String, Replace As St
 End Function
 
 Public Function mdbdReplaceSpecialChars(strInputString As String) As String
-    'MDBDOC: This function replaces special punctuation characters with their HTML escape equivalent
+    'aexcode: This function replaces special punctuation characters with their HTML escape equivalent
     ' Function: mdbdReplaceSpecialChars
     ' Scope:    Private
     ' Parameters: strInputString - input string
@@ -1388,7 +1409,7 @@ Public Function mdbdReplaceSpecialChars(strInputString As String) As String
 End Function
 
 Private Function LoadStylesheets(clsfh As mdbdclsFileHandle, strHaltOnError As String) As Integer
-    'MDBDOC: This function loads the stylesheet specified in the preferences and writes the meta tag in the header.
+    'aexcode: This function loads the stylesheet specified in the preferences and writes the meta tag in the header.
     ' Function: LoadStylesheets
     ' Scope:    Private
     ' Parameters: clsfh - clsfilehandle object used to write the data out to.
@@ -1452,7 +1473,7 @@ Private Function LoadStylesheets(clsfh As mdbdclsFileHandle, strHaltOnError As S
 End Function
 
 Public Function StartLocalPreferences() As Boolean
-    'MDBDOC: Function called from Addins menu to start MDB Doc running.
+    'aexcode: Function called from Addins menu to start MDB Doc running.
     ' Function: StartMDBDoc
     ' Scope:    Public
     ' Parameters: None
@@ -1466,7 +1487,7 @@ Public Function StartLocalPreferences() As Boolean
 End Function
 
 Private Function GetGuidDescription(strGuid As String, strMajorVersion As String, strMinorVersion As String) As String
-    'MDBDOC: This function returns the string description of a specific GUID and version number.
+    'aexcode: This function returns the string description of a specific GUID and version number.
     ' Function: GetGuidDescription
     ' Scope: Public
     ' Parameters: strGuid - GUID of the reference, strMajorVersion - Major version number, strMinorVersion - Minor version number
@@ -1482,7 +1503,7 @@ Private Function GetGuidDescription(strGuid As String, strMajorVersion As String
 End Function
 
 Public Function FormatSQL(strSQL As String, blnNewlinePerField As Boolean) As String
-'MDBDOC: SQL Formatting function for Access VBA, J Barnett, Oct 2007.
+'aexcode: SQL Formatting function for Access VBA, J Barnett, Oct 2007.
 ' ******************************************************
 ' SQL Formatting Function by J Barnett,
 ' Date: 26-27 October 2007
@@ -1629,7 +1650,7 @@ Public Function FormatSQL(strSQL As String, blnNewlinePerField As Boolean) As St
 End Function
 
 Private Function LoadRibbons(clsfh As mdbdclsFileHandle, strHaltOnError As String) As Integer
-' MDBDOC: Function for handling Ribbons
+' aexcode: Function for handling Ribbons
 ' Function: LoadRibbons
 ' Scope: Private
 ' Parameters: clsfh - File handle, strHaltOnError - string

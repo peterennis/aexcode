@@ -360,12 +360,12 @@ Option Compare Database
 Option Explicit
 
 Private Sub cmdClose_Click()
-    'MDBDOC: Close button event handler
+    'aexcode: Close button event handler
     DoCmd.Close acForm, Me.Name
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
-    'MDBDOC: Preferences screen updates to check whether current item contains contains a null (or not) value.
+    'aexcode: Preferences screen updates to check whether current item contains contains a null (or not) value.
     ' New in v1.42, check for mandatory preference values
     
     
@@ -379,15 +379,15 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 End Sub
 
 Private Sub Form_Close()
-    'MDBDOC: Form close event handler - it forces reloading of the preference data on form closing
+    'aexcode: Form close event handler - it forces reloading of the preference data on form closing
     ' Done this way than via cmdClose_Click as it handles clicking the X icon in the form title bar.
     
     mdbdLoadPreferences ' reload the preference table based on the changes.
-    If SysCmd(acSysCmdGetObjectState, acForm, "frmMdbdocStartup") > 0 Then Forms("frmMdbdocStartup").Visible = True
+    If SysCmd(acSysCmdGetObjectState, acForm, "frm_aexcodeStartup") > 0 Then Forms("frm_aexcodeStartup").Visible = True
 End Sub
 
 Private Sub Form_Current()
-    'MDBDOC: Form current record event handler, making preference value read only (or not) depending on CanOverride preference.
+    'aexcode: Form current record event handler, making preference value read only (or not) depending on CanOverride preference.
     If Me.chkCanOverride = True Then
         Me.PreferenceValue.Locked = False
     Else
@@ -396,7 +396,7 @@ Private Sub Form_Current()
 End Sub
 
 Private Sub Form_Load()
-    'MDBDOC: Form Load event handler - sets form caption and title lable.
+    'aexcode: Form Load event handler - sets form caption and title lable.
 
     Me.lblTitle.Caption = APP_NAME & " Preferences"
     Me.Caption = APP_NAME & " Preferences"

@@ -195,7 +195,7 @@ Inherited: False;
 ---
 Name: NavPane Width
 Type: dbLong
-Value: 215
+Value: 242
 Inherited: False;
 ---
 Name: NavPane Category
@@ -256,5 +256,10 @@ Inherited: False;
 Name: Picture Property Storage Format
 Type: dbLong
 Value: 1
+Inherited: False;
+---
+Name: StartUpForm
+Type: dbText
+Value: frm_aexcodeStartup
 Inherited: False;
 ---

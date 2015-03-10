@@ -14,18 +14,18 @@ Begin Form
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =6916
+    Width =6480
     DatasheetFontHeight =10
     ItemSuffix =23
-    Left =165
-    Top =2400
-    Right =6750
-    Bottom =4740
+    Left =9135
+    Top =3375
+    Right =15720
+    Bottom =5715
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x9b785614191ae240
     End
-    Caption ="MDB Doc"
+    Caption ="aexcode"
     OnOpen ="[Event Procedure]"
     DatasheetFontName ="Arial"
     PrtMip = Begin
@@ -85,24 +85,28 @@ Begin Form
             LabelX =-1701
         End
         Begin Section
-            Height =1871
+            Height =1728
             BackColor =-2147483633
             Name ="Detail"
             Begin
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
-                    Left =465
+                    Left =150
                     Top =120
-                    Width =5775
+                    Width =6105
                     Height =450
                     FontSize =18
                     BackColor =-2147483633
                     ForeColor =-2147483640
-                    Name ="lblMDBDoc"
-                    Caption ="MDB Doc version"
+                    Name ="lblaexcode"
+                    Caption ="aexcode"
                     FontName ="Arial"
+                    LayoutCachedLeft =150
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =6255
+                    LayoutCachedHeight =570
                 End
                 Begin CommandButton
                     Default = NotDefault
@@ -199,41 +203,6 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                 End
-                Begin Image
-                    BackStyle =1
-                    Left =113
-                    Top =113
-                    Width =450
-                    Height =510
-                    BackColor =-2147483633
-                    Name ="imgMDBDoc"
-                    PictureData = Begin
-                        0x280000001b0000001c0000000100040000000000c0010000120b0000120b0000 ,
-                        0x10000000000000000000000020202000282828004040400080808000a0a0a000 ,
-                        0xb0b0b000b8b8b800c0c0c000ffffff001010280078d8d8001888880020f0f000 ,
-                        0x00ffff00ff0000006666aaaaaaaaaaaaaaaaaaaaaaa0f27f666aafffffffffff ,
-                        0xfffffffffff0f27f66afaffffffffffffffffffffff0f27f6affafffffffffff ,
-                        0xfff1234ffff0f27fafffaffffffffffffff0c747fff0f27faf9fafffffffffff ,
-                        0xf00e81b7fff0f27faf9faffffffffffff0e80db7fff0f27faf9fafffff000000 ,
-                        0x0c70ed4ffff0f27faf9faffff1ccce0ce70eeffffff0f27faf9fafff4cceeeee ,
-                        0x80ee0ffffff0f27faf9fafff4ceecee70ee0fffffff0f27faf9fafff4ceeecee ,
-                        0xce0ffffffff0f27faf9fafff5440eeceec0ffffffff0f27faf9fafff4d080eec ,
-                        0xee0ffffffff0f27faf9fafff4ce040eece0ffffffff0f27faf9faffff1ce04ee ,
-                        0xec0ffffffff0f27faf9fafffff0ce4eec0fffffffff0f27faf9faffffff33533 ,
-                        0x3ffffffffff0f27faf9faffffffffffffffffffffff0f27faf9fafffffffffff ,
-                        0xfffffffffff0f27faf9faffffaa9aaa9aa9aa9aafff0f27faf9faffff9999999 ,
-                        0x99999999fff0f27faf9faffffffffffffffffffffff0f27faf9fafffffffffff ,
-                        0xfffffffffff0f27faffaaaaaaaaaaaaaaaaaaaaaaaa0f27fafa5666666666666 ,
-                        0x666666666660f27faa66767676767676767676766660f27f6aaaaaaaaaaaaaaa ,
-                        0xaaaaaaaa6660f27f000000000000000000000000
-                    End
-                    ObjectPalette = Begin
-                        0x000301000000000000000000
-                    End
-                    Picture ="MDBDOC5.bmp"
-
-                    TabIndex =6
-                End
                 Begin CommandButton
                     OverlapFlags =85
                     Left =3685
@@ -284,21 +253,23 @@ Option Compare Database
 Option Explicit
 
 Private Sub cmdAbout_Click()
-    'MDBDOC: Event Handler for About Button on the Startup form.
-    MsgBox APP_NAME & " is an open source Documentation addin for Microsoft Access 97-2010. " & vbCrLf & _
-                    "It is Copyright John Barnett released under the GNU General Public Software License version 3." & vbCrLf & vbCrLf & _
-                    "Product Homepage: http://mdbdoc.sourceforge.net/" & vbCrLf & _
+    'aexcode: Event Handler for About Button on the Startup form.
+    MsgBox APP_NAME & " is an open source code export and documentation addin for Microsoft Access 2013. " & _
+                    "It is Copyright Peter Ennis released under the GNU General Public Software License version 3 " & _
+                    "and includes code from John Barnett's MDB Doc project." & vbCrLf & vbCrLf & _
+                    "aexcode Product Homepage: https://github.com/peterennis/aexcode/" & vbCrLf & _
+                    "MDB Doc Product Homepage: http://mdbdoc.sourceforge.net/" & vbCrLf & vbCrLf & _
                     "GNU General Public Software license: http://www.gnu.org/licenses/, " & vbCrLf & _
                     "a copy of which is included in the file GPL.TXT with this application.", vbOKOnly + vbInformation, APP_NAME
 End Sub
 
 Private Sub cmdCancel_Click()
-    'MDBDOC: Event handler for Cancel button on MBD Doc startup form.
+    'aexcode: Event handler for Cancel button on MBD Doc startup form.
     DoCmd.Close acForm, Me.Name, acSaveNo
 End Sub
 
 Private Sub cmdProcess_Click()
-    'MDBDOC: Event handler for Process button on MBD Doc startup form.
+    'aexcode: Event handler for Process button on MBD Doc startup form.
     ' Amended 09 Dec 2003 to send files to overwrite to recycle bin rather than delete.
     Dim strOutputFile As String
     Dim strPreference As String
@@ -330,7 +301,7 @@ Private Sub cmdProcess_Click()
 End Sub
 
 Private Sub cmdSelect_Click()
-    'MDBDOC: Event handler for "Select File" button on MBD Doc startup form.
+    'aexcode: Event handler for "Select File" button on MBD Doc startup form.
     Dim strOutput As String
     
     strOutput = PrepareSavefile
@@ -340,7 +311,7 @@ Private Sub cmdSelect_Click()
 End Sub
 
 Private Sub Form_Open(Cancel As Integer)
-'MDBDOC: Form Open event - sets up form with default output location and checks that database is not in MDE format.
+'aexcode: Form Open event - sets up form with default output location and checks that database is not in MDE format.
 ' Amended 30 August 2014 to check Access version >= 12.0 (Access 2007) for MDB Doc 1.60.
     Dim strOutputFile As String
     Dim strPreference As String
@@ -368,11 +339,10 @@ Private Sub Form_Open(Cancel As Integer)
         Exit Sub
     End If
 
-    Me.lblMDBDoc.Caption = APP_NAME & " Copyright John Barnett"
 End Sub
 
 Private Sub txtOutputFile_AfterUpdate()
-    'MDBDOC: Checks to disable the "Process" button if the txtOutputfile text box is empty.
+    'aexcode: Checks to disable the "Process" button if the txtOutputfile text box is empty.
     If Len(Me.txtOutputFile & "") > 0 Then
         cmdProcess.Enabled = True
     Else
@@ -381,7 +351,7 @@ Private Sub txtOutputFile_AfterUpdate()
 End Sub
 
 Private Function mdbdIsMDE(db As DAO.Database) As Boolean
-    'MDBDOC: Function to determine if a particular database is in MDE format or not.
+    'aexcode: Function to determine if a particular database is in MDE format or not.
     ' Function: mdbdIsMDE
     ' Scope:    Private
     ' Parameters: db - DAO database object
@@ -403,7 +373,7 @@ Private Function mdbdIsMDE(db As DAO.Database) As Boolean
 End Function
 
 Private Sub cmdPreferences_Click()
-    'MDBDOC: Sub to open the preferences form.
+    'aexcode: Sub to open the preferences form.
     On Error GoTo Err_cmdPreferences_Click
 
     Me.Visible = False
@@ -419,7 +389,7 @@ Err_cmdPreferences_Click:
 End Sub
 
 Private Function SetOutputFilename() As String
-    'MDBDOC: Function to generate the default output filename, based on the database name and the user preferences.
+    'aexcode: Function to generate the default output filename, based on the database name and the user preferences.
     Dim strPreference As String
     Dim intCount As Integer
     Dim strOutputfilename As String

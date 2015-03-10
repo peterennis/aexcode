@@ -115,7 +115,7 @@ Public Function SetValueEx( _
     lType As Long, _
     vValue As Variant _
 ) As Long
-    'MDBDOC: Wrapper function for writing values to the Registry. Do Not Call Directly.
+    'aexcode: Wrapper function for writing values to the Registry. Do Not Call Directly.
 
     '*** Called By: SetKeyValue
     '*** Description: Wrapper function around the registry API calls
@@ -145,7 +145,7 @@ Private Function QueryValueEx( _
     ByVal szValueName As String, _
     vValue As Variant _
 ) As Long
-'MDBDOC: Code to read value from the Registry based on data; do not call directly.
+'aexcode: Code to read value from the Registry based on data; do not call directly.
 
 '*** Called By: QueryValue
 '*** Description: Wrapper function around the registry API calls to
@@ -203,7 +203,7 @@ QueryValueExError:
 End Function
 
 Public Sub CreateNewKey(sNewKeyName As String, lPredefinedKey As Long)
-    'MDBDOC: Code to create a new Registry key. Not used in MDB Doc.
+    'aexcode: Code to create a new Registry key. Not used in MDB Doc.
 
 '***With this procedure a call of
 '*** CreateNewKey "TestKey", HKEY_CURRENT_USER
@@ -243,7 +243,7 @@ Public Sub SetKeyValue( _
     vValueSetting As Variant, _
     lValueType As Long _
 )
-'MDBDOC: Code to write a value to the registry. Not used by MDB Doc.
+'aexcode: Code to write a value to the registry. Not used by MDB Doc.
 
 '*** Called By: Your code when you want to set a KeyValue
 '*** Description: Opens the key you want to set, calls the wrapper
@@ -267,7 +267,7 @@ Public Function QueryValue( _
     sKeyName As String, _
     sValueName As String _
 ) As Variant
-'MDBDOC: Code to read a value from the Registry. Used for the references section
+'aexcode: Code to read a value from the Registry. Used for the references section
 '*** Called By: Your code when you want to set a read a KeyValue
 '*** Description: Opens the key you want to set, calls the wrapper
 '*** function QueryValueEx, closes key.
@@ -290,7 +290,7 @@ Public Function QueryValue( _
 End Function
 
 Public Sub TestRegModule()
-'MDBDOC: Demo code for testing writing to the Registry. Not used in MDB Doc.
+'aexcode: Demo code for testing writing to the Registry. Not used in MDB Doc.
 '
 ' This procedure demonstrates the use of this module
 ' All code below here is demo code
@@ -311,7 +311,7 @@ Public Sub TestRegModule()
 End Sub
 
 Sub CreateKeyDriver()
-'MDBDOC: Demo code to demonstrate creating keys.  Not used in MDB Doc.
+'aexcode: Demo code to demonstrate creating keys.  Not used in MDB Doc.
 '
 ' demo code
 '
@@ -335,7 +335,7 @@ Sub CreateKeyDriver()
 End Sub
 
 Sub SetStringValueDriver()
-'MDBDOC: Demo code to demonstrate writing a string value. Not used in MDB Doc.
+'aexcode: Demo code to demonstrate writing a string value. Not used in MDB Doc.
 '
 ' demo code
 '
@@ -361,7 +361,7 @@ Sub SetStringValueDriver()
 
 End Sub
 Sub SetNumberValueDriver()
-'MDBDOC: Demo code to demonstrate creating numeric values in the Registry. Not used in MDB Doc.
+'aexcode: Demo code to demonstrate creating numeric values in the Registry. Not used in MDB Doc.
 '
 ' demo code
 '

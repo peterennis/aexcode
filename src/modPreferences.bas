@@ -15,7 +15,7 @@ End Type
 Dim preferences() As Preference
 
 Public Function mdbdGetPreference(strPreferenceName As String) As String
-    'MDBDOC: This function will retrieve the specified local preference from the preferences table. If there isn't one, it will retrieve it from the global prefs table.
+    'aexcode: This function will retrieve the specified local preference from the preferences table. If there isn't one, it will retrieve it from the global prefs table.
     ' Function: mdbdGetPreference
     ' Scope:    Public
     ' Parameters: strPreferenceName - input string; Returns: Preference value.
@@ -55,7 +55,7 @@ Exit_GetPreference:
 End Function
 
 Public Function mdbdLoadPreferences() As Integer
-    'MDBDOC: This function will retrieve the preferences from the preferences table and load them into an array.
+    'aexcode: This function will retrieve the preferences from the preferences table and load them into an array.
     ' Function: mdbdLoadPreferences
     ' Scope:    Public
     ' Parameters: None
